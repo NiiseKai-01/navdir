@@ -6,7 +6,7 @@ navdir() {
     while true; do
         selected=$( (echo ".."; ls "$path"; echo "quit") | fzf --reverse --cycle )
 
-        if [[ "$selected" == ".." && "$path" != "/mnt/d" ]]; then
+        if [[ "$selected" == ".." && "$path" != "/mnt" ]]; then
             path=$(dirname "$path")
 
         elif [[ "$selected" == "quit" || -z "$selected" ]]; then
