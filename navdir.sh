@@ -1,6 +1,6 @@
 #navdir command
 navdir() {
-    path="/mnt/d"
+    path="/mnt"
     selected=""
 
     while true; do
