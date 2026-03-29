@@ -1,12 +1,12 @@
 #navdir command
 navdir() {
-    path="/mnt"
+    path="$PWD"
     selected=""
 
     while true; do
         selected=$( (echo ".."; ls "$path"; echo "quit") | fzf --reverse --cycle --prompt="$path: " )
 
-        if [[ "$selected" == ".." && "$path" != "/mnt" ]]; then
+        if [[ "$selected" == ".." && "$path" != "/" ]]; then
             path=$(dirname "$path")
 
         elif [[ "$selected" == "quit" || -z "$selected" ]]; then
